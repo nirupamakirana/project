@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Shop{% endblock %}
+
+{% block content  %}
+    <!-- Added your content -->
+<div class="container">
+    <h5 class="text-center">Products</h5>
+
+    <div class="row">
+    {% for hairbow in hairbows %}
+        <div class="col-md-4 my-2">
+            <div class="card">
+                <img src="{{ hairbow.image }}" height="250" />
+
+                <div class="mx-2">
+                <h5>Name: {{ hairbow.name }}</h5>
+                <p>Tags: {{ hairbow.tags }}</p>
+                <p>Category: {{ hairbow.category }}</p>
+                <p>Price: {{ hairbow.price }}</p>
+                </div>
+                <a href="details/{{ hairbow.id }}" class="btn btn-dark">More Details</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+<style>
+    body  {
+      background-image: url("/static/images/BGI.jpg");
+      background-repeat: no-repeat;
+      background-size: 1800px,900px;
+    }
+    </style>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+    <!-- Added your Javascript code -->
+</script>
+{% endblock %}
